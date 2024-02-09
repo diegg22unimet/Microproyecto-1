@@ -16,10 +16,18 @@
 }
 
 .title {
+    margin: 20px 20px 0px; 
     color: white;
     text-align: center;
     font-weight: bolder;
     font-size: xx-large;
+}
+
+.instruction {
+  padding: 5px;
+    color: white;
+    font-size: small;
+    text-align: justify;
 }
 
 label {
