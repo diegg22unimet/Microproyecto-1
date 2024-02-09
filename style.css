@@ -25,27 +25,57 @@
 
 .instruction {
   padding: 5px;
-    color: white;
-    font-size: small;
-    text-align: justify;
+  color: white;
+  font-size: small;
+  text-align: justify;
 }
 
 label {
-    color: white;
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
+  color: white;
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
 }
 
 input {
-    border-radius: 5px;
-    border-color: #bee0ec;
+  border-radius: 5px;
+  border-color: #bee0ec;
 }
 
-button {
-    padding: 5px 10px;
-    border-radius: 5px;
-    border-color: #bee0ec;
+#start-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: #bee0ec;
+}
+
+.cont {
+  margin: 0px 0px 30px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-number {
+  margin: 0;
+  font-size: small;
+}
+
+.actual-number {
+  border: 2px solid black;
+  width: 60px;
+  height: 60px;
+
+}
+
+#play-btn {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: #bee0ec;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
