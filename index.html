@@ -9,14 +9,14 @@
 <body>
     <div class="startinfo">
         <h1 class="title">BINGO</h1>
-        <form action="">
+        <form id="bingo-form">
             <label for="player1">Jugador 1: </label>
             <input type="text" id="player1" name="player1"><br><br>
             <label for="player2">Jugador 2: </label>
             <input type="text" id="player2" name="player2"><br><br>
             <label for="player3">Jugador 3: </label>
             <input type="text" id="player3" name="player3"><br><br>
-            <label for="player1">Jugador 4: </label>
+            <label for="player4">Jugador 4: </label>
             <input type="text" id="player4" name="player4"><br><br>
             <label for="size">Elija el tamaño del tablero: </label>
             <select id="size">
@@ -26,28 +26,12 @@
             </select>
         </form>
         <br>
-        <button>Iniciar juego</button>
+        <button id="start-btn">Iniciar juego</button>
     </div>
-    <div class="bingo-card">
-        <div class="row">
-          <div class="bingo-label">
-            <div class="bingo-letter">B</div>
-          </div>
-          <div class="bingo-label">
-            <div class="bingo-letter">I</div>
-          </div>
-          <div class="bingo-label">
-            <div class="bingo-letter">N</div>
-          </div>
-          <div class="bingo-label">
-            <div class="bingo-letter">G</div>
-          </div>
-          <div class="bingo-label">
-            <div class="bingo-letter">O</div>
-          </div>
-        </div>
-      </div>
 
+    <br><br>
+
+    <div id="cards-container"></div>
     <script src="./script.js"></script>
 </body>
 </html>

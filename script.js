@@ -1,45 +1,53 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const size = prompt("Introduce el tamaño del cartón (3, 4 o 5):");
-    
-    if (size !== "3" && size !== "4" && size !== "5") {
-      alert("Tamaño inválido. Por favor, elige 3, 4 o 5.");
-      return;
+function generateRandomNumbers() {
+  var numbers = [];
+  while (numbers.length < 25) {
+    var randomNumber = Math.floor(Math.random() * 50) + 1;
+    if (numbers.indexOf(randomNumber) === -1) {
+      numbers.push(randomNumber);
     }
-  
-    for (let i = 0; i < 4; i++) {
-      const numbers = generateRandomNumbers(1, 50, size * size);
-      createBingoCard(size, numbers);
-    }
-  });
-  
-  function createBingoCard(size, numbers) {
-    const bingoCard = document.createElement('div');
-    bingoCard.classList.add('bingo-card');
-  
-    for (let i = 0; i < size; i++) {
-      const row = document.createElement('div');
-      row.classList.add('row');
-  
-      for (let j = 0; j < size; j++) {
-        const cell = document.createElement('div');
-        cell.classList.add('cell');
-        cell.textContent = numbers[i * size + j];
-        row.appendChild(cell);
-      }
-  
-      bingoCard.appendChild(row);
-    }
-  
-    document.body.appendChild(bingoCard);
   }
-  
-  function generateRandomNumbers(min, max, count) {
-    const numbers = new Set();
-  
-    while (numbers.size < count) {
-      const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-      numbers.add(randomNumber);
+  return numbers;
+}
+
+function generateCard(size, playerName) {
+  var card = document.createElement("div");
+  card.classList.add("card");
+
+  var numbers = generateRandomNumbers();
+
+  var playerNameElement = document.createElement("h2");
+  playerNameElement.textContent = playerName;
+  card.appendChild(playerNameElement);
+
+  for (var i = 0; i < size; i++) {
+    var row = document.createElement("div");
+    row.classList.add("numbers");
+    for (var j = 0; j < size; j++) {
+      var number = document.createElement("div");
+      number.classList.add("number");
+      number.textContent = numbers[i * size + j];
+      row.appendChild(number);
     }
-  
-    return Array.from(numbers);
+    card.appendChild(row);
   }
+
+  return card;
+}
+
+function generateCards() {
+  var sizeSelect = document.getElementById("size");
+  var size = parseInt(sizeSelect.value);
+  var container = document.getElementById("cards-container");
+  var form = document.getElementById("bingo-form");
+
+  container.innerHTML = "";
+
+  for (var i = 1; i <= 4; i++) {
+    var playerName = form["player" + i].value;
+    var card = generateCard(size, playerName);
+    container.appendChild(card);
+  }
+}
+
+var startButton = document.getElementById("start-btn");
+startButton.addEventListener("click", generateCards);

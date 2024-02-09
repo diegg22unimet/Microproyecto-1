@@ -40,36 +40,36 @@ button {
     border-color: #bee0ec;
 }
 
-.bingo-card {
-    width: 300px;
-    margin: 10px;
-  }
-  
-.row {
-    display: flex;
+.card {
+  border: 3px solid black;
+  width: 50%;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #66b6d2;
+  margin-left: auto;
+  margin-right: auto;
 }
-  
-.cell {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+
+h2 {
+  text-transform: capitalize;
+  color: white;
+  text-align: center;
+  margin: 0px 10px 10px 10px;
 }
-  
-.bingo-label {
-    display: flex;
-    justify-content: center;
+
+.numbers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: black;
 }
-  
-.bingo-letter {
-    width: 50px;
-    height: 50px;
-    border: 1px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+
+.number {
+  width: 40px;
+  height: 40px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
 }
