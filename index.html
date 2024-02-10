@@ -32,14 +32,20 @@
 
     <br><br>
 
-    <div class="cont">
-      <p class="text-number">Salió el número:</p>
-      <p class="actual-number"></p>
-      <button id="play-btn">Jugar</button>
-      <p>Cantidad de turnos restantes: </p>
-      <p id="turns-counter">25</p>
+    <div id="game-container" class="hidden">
+        <div class="cont">
+            <div class="cont__left">
+              <p class="text-number">Salió el número:</p>
+              <p class="actual-number"></p>
+              <button id="play-btn">Jugar</button>
+            </div>
+            <div class="cont__right">
+              <p class="turns-text">Cantidad de turnos restantes: </p>
+              <p id="turns-counter">25</p>
+            </div>
+        </div>
     </div>
-      
+     
     <div id="cards-container"></div>
 
     <script src="./script.js"></script>

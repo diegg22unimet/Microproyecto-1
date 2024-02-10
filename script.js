@@ -38,14 +38,6 @@ function generateCard(size, playerName) {
 }
 
 function generateCards() {
-  /*var name1 = document.getElementById("player1").value;
-  var name2 = document.getElementById("player2").value;
-  var name3 = document.getElementById("player3").value;
-  var name4 = document.getElementById("player4").value;
-  do {
-    alert("¡Error! El campo de texto está vacío. Por favor, ingresa un valor.");
-  } while ((name1 && name2 && name3 && name4) === "");*/
-
   var sizeSelect = document.getElementById("size");
   var size = parseInt(sizeSelect.value);
   var container = document.getElementById("cards-container");
@@ -81,10 +73,25 @@ function play() {
     numberElement.textContent = number;
     remainingTurns--;
     updateTurnsCounter();
+
+    var cards = document.getElementsByClassName("card");
+    for (var i = 0; i < cards.length; i++) {
+      var numbers = cards[i].getElementsByClassName("number");
+      for (var j = 0; j < numbers.length; j++) {
+        var cardNumber = parseInt(numbers[j].textContent);
+        if (cardNumber === number) {
+          numbers[j].classList.add("matched");
+        }
+      }
+    }
   }
 }
 
 var startButton = document.getElementById("start-btn");
+var gameContainer = document.getElementById("game-container");
+startButton.addEventListener("click", function() {
+    gameContainer.classList.remove("hidden");
+});
 startButton.addEventListener("click", generateCards);
 
 var playButton = document.getElementById("play-btn");
