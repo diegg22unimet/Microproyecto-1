@@ -1,3 +1,6 @@
+var playedNumbers = [];   // Lista para almacenar los números ya jugados en cada turno
+var remainingTurns = 25; // Número de turnos restantes
+
 function generateRandomNumbers() {
   var numbers = [];
   while (numbers.length < 25) {
@@ -35,6 +38,14 @@ function generateCard(size, playerName) {
 }
 
 function generateCards() {
+  /*var name1 = document.getElementById("player1").value;
+  var name2 = document.getElementById("player2").value;
+  var name3 = document.getElementById("player3").value;
+  var name4 = document.getElementById("player4").value;
+  do {
+    alert("¡Error! El campo de texto está vacío. Por favor, ingresa un valor.");
+  } while ((name1 && name2 && name3 && name4) === "");*/
+
   var sizeSelect = document.getElementById("size");
   var size = parseInt(sizeSelect.value);
   var container = document.getElementById("cards-container");
@@ -49,5 +60,34 @@ function generateCards() {
   }
 }
 
+function generateRandomNumber() {
+  var randomNumber;
+  do {
+    randomNumber = Math.floor(Math.random() * 50) + 1;
+  } while (playedNumbers.includes(randomNumber)); // Verificar si el número ya ha sido jugado
+  playedNumbers.push(randomNumber); // Agregar el número a la lista de números jugados
+  return randomNumber;
+}
+
+function updateTurnsCounter() {
+  var turnsCounter = document.getElementById("turns-counter");
+  turnsCounter.textContent = remainingTurns;
+}
+
+function play() {
+  if (remainingTurns > 0) {
+    var numberElement = document.querySelector(".actual-number");
+    var number = generateRandomNumber();
+    numberElement.textContent = number;
+    remainingTurns--;
+    updateTurnsCounter();
+  }
+}
+
 var startButton = document.getElementById("start-btn");
 startButton.addEventListener("click", generateCards);
+
+var playButton = document.getElementById("play-btn");
+playButton.addEventListener("click", play);
+
+updateTurnsCounter();
