@@ -87,14 +87,23 @@ function play() {
   }
 }
 
+function restartGame() {
+  location.reload();
+}
+
 var startButton = document.getElementById("start-btn");
 var gameContainer = document.getElementById("game-container");
+var restartButton = document.getElementById("restart-button")
 startButton.addEventListener("click", function() {
     gameContainer.classList.remove("hidden");
+    restartButton.classList.remove("hidden")
 });
 startButton.addEventListener("click", generateCards);
 
 var playButton = document.getElementById("play-btn");
 playButton.addEventListener("click", play);
+
+var restartAction = document.getElementById("restart");
+restartAction.addEventListener("click", restartGame);
 
 updateTurnsCounter();

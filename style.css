@@ -120,17 +120,18 @@ input {
 
 .card {
   border: 3px solid black;
+  border-radius: 5px;
   width: 50%;
   padding: 20px;
   margin-bottom: 20px;
-  background-color: #66b6d2;
+  background-color: #d9e5ea;
   margin-left: auto;
   margin-right: auto;
 }
 
 h2 {
   text-transform: capitalize;
-  color: white;
+  color: black;
   text-align: center;
   margin: 0px 10px 10px 10px;
 }
@@ -145,13 +146,23 @@ h2 {
 .number {
   width: 40px;
   height: 40px;
-  border: 1px solid white;
+  border: 1px solid black;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
 }
 
+#restart {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-color: #bee0ec;
+  display: flex;
+  margin: 40px 0px 40px 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .number.matched {
-  background-color: green;
+  background-color: white;
 }
