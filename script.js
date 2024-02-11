@@ -113,9 +113,9 @@ function checkPlayerInputs() {
 var startButton = document.getElementById("start-btn");
 startButton.addEventListener("click", function() {
   if (checkPlayerInputs()) {
-      gameContainer.classList.remove("hidden");
-      cardsContainer.classList.remove("hidden");
-      restartButton.classList.remove("hidden");
+    gameContainer.classList.remove("hidden");
+    cardsContainer.classList.remove("hidden");
+    restartButton.classList.remove("hidden");
   }
 });
 

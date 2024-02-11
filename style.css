@@ -88,6 +88,8 @@ input {
   width: 80px;
   height: 60px;
   font-size: xx-large;
+  font-weight: bold;
+  color: rgb(31, 9, 224);
   text-align: center;
 }
 
@@ -114,7 +116,7 @@ input {
 }
 
 #turns-counter {
-  font-size: 50px;
+  font-size: 25px;
   margin: 0;
 }
 
@@ -146,6 +148,7 @@ h2 {
 .number {
   width: 40px;
   height: 40px;
+  background-color: white;
   border: 1px solid black;
   display: flex;
   align-items: center;
@@ -164,5 +167,38 @@ h2 {
 }
 
 .number.matched {
-  background-color: white;
+  background-color: rgb(122, 247, 122);
+}
+
+@media screen and (max-width: 600px) {
+  .startinfo {
+    width: auto;
+    margin: 20px;
+  }
+
+  .cont {
+    width: auto;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .startinfo {
+    width: 400px;
+  }
+
+  .cont {
+    width: 800px;
+  }
+
+  .card {
+    width: 45%;
+  }
 }
