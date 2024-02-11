@@ -91,13 +91,38 @@ function restartGame() {
   location.reload();
 }
 
+function checkPlayerInputs() {
+  var playerInputs = document.getElementsByClassName("player-input");
+  var areInputsFilled = true;
+
+  for (var i = 0; i < playerInputs.length; i++) {
+    if (playerInputs[i].value === "") {
+      areInputsFilled = false;
+      break;
+    }
+  }
+
+  if (!areInputsFilled) {
+    alert("Por favor complete todos los nombres de los jugadores antes de iniciar el juego.");
+    return false;
+  }
+
+  return true;
+}
+
 var startButton = document.getElementById("start-btn");
-var gameContainer = document.getElementById("game-container");
-var restartButton = document.getElementById("restart-button")
 startButton.addEventListener("click", function() {
-    gameContainer.classList.remove("hidden");
-    restartButton.classList.remove("hidden")
+  if (checkPlayerInputs()) {
+      gameContainer.classList.remove("hidden");
+      cardsContainer.classList.remove("hidden");
+      restartButton.classList.remove("hidden");
+  }
 });
+
+var gameContainer = document.getElementById("game-container");
+var cardsContainer = document.getElementById("cards-container")
+var restartButton = document.getElementById("restart-button");
+
 startButton.addEventListener("click", generateCards);
 
 var playButton = document.getElementById("play-btn");

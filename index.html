@@ -12,13 +12,13 @@
         <p class="instruction">Bienvenido a su juego online de bingo, por favor introduzca los nombres de cada jugador y escoja el tamaño de su tablero ¡Buena suerte!</p>
         <form id="bingo-form">
             <label for="player1">Jugador 1: </label>
-            <input type="text" id="player1" name="player1"><br><br>
+            <input type="text" id="player1" name="player1" class="player-input"><br><br>
             <label for="player2">Jugador 2: </label>
-            <input type="text" id="player2" name="player2"><br><br>
+            <input type="text" id="player2" name="player2" class="player-input"><br><br>
             <label for="player3">Jugador 3: </label>
-            <input type="text" id="player3" name="player3"><br><br>
+            <input type="text" id="player3" name="player3" class="player-input"><br><br>
             <label for="player4">Jugador 4: </label>
-            <input type="text" id="player4" name="player4"><br><br>
+            <input type="text" id="player4" name="player4" class="player-input"><br><br>
             <label for="size">Elija el tamaño del tablero: </label>
             <select id="size">
                 <option value="3">3</option>
@@ -46,7 +46,7 @@
         </div>
     </div>
      
-    <div id="cards-container"></div>
+    <div id="cards-container" class="hidden"></div>
     
     <div id="restart-button" class="hidden">
         <button id="restart">Reiniciar juego</button>
