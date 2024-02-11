@@ -1,6 +1,10 @@
-var playedNumbers = [];   // Lista para almacenar los números ya jugados en cada turno
-var remainingTurns = 25; // Número de turnos restantes
+// Lista que almacena los números que ya salieron en cada turno
+var playedNumbers = [];
+// Variable que cuenta de forma regresiva los turnos restantes
+var remainingTurns = 25;
 
+
+// Rellena los cartones de bingo con números del 1 al 50
 function generateRandomNumbers() {
   var numbers = [];
   while (numbers.length < 25) {
@@ -12,6 +16,7 @@ function generateRandomNumbers() {
   return numbers;
 }
 
+// Genera el contenedor en el que va cada cartón de bingo acompañado del nombre del jugador
 function generateCard(size, playerName) {
   var card = document.createElement("div");
   card.classList.add("card");
@@ -37,6 +42,7 @@ function generateCard(size, playerName) {
   return card;
 }
 
+// Genera los cartones de bingo del tamaño que seleccionó el usuario
 function generateCards() {
   var sizeSelect = document.getElementById("size");
   var size = parseInt(sizeSelect.value);
@@ -52,20 +58,23 @@ function generateCards() {
   }
 }
 
+// Genera números aleatorios del 1 al 50
 function generateRandomNumber() {
   var randomNumber;
   do {
     randomNumber = Math.floor(Math.random() * 50) + 1;
-  } while (playedNumbers.includes(randomNumber)); // Verificar si el número ya ha sido jugado
-  playedNumbers.push(randomNumber); // Agregar el número a la lista de números jugados
+  } while (playedNumbers.includes(randomNumber));
+  playedNumbers.push(randomNumber);
   return randomNumber;
 }
 
+// Actualiza el contador de turnos
 function updateTurnsCounter() {
   var turnsCounter = document.getElementById("turns-counter");
   turnsCounter.textContent = remainingTurns;
 }
 
+// Botón "Jugar"
 function play() {
   if (remainingTurns > 0) {
     var numberElement = document.querySelector(".actual-number");
@@ -87,26 +96,25 @@ function play() {
   }
 }
 
+// Botón "Reiniciar juego"
 function restartGame() {
   location.reload();
 }
 
+// Valida que los campos de los nombre de jugadores estén llenos antes de dar inicio al juego
 function checkPlayerInputs() {
   var playerInputs = document.getElementsByClassName("player-input");
   var areInputsFilled = true;
-
   for (var i = 0; i < playerInputs.length; i++) {
     if (playerInputs[i].value === "") {
       areInputsFilled = false;
       break;
     }
   }
-
   if (!areInputsFilled) {
     alert("Por favor complete todos los nombres de los jugadores antes de iniciar el juego.");
     return false;
   }
-
   return true;
 }
 

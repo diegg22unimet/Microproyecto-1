@@ -175,13 +175,11 @@ h2 {
     width: auto;
     margin: 20px;
   }
-
   .cont {
     width: auto;
     margin: 20px;
     padding: 20px;
   }
-
   .card {
     width: 90%;
     margin-left: auto;
@@ -193,11 +191,9 @@ h2 {
   .startinfo {
     width: 400px;
   }
-
   .cont {
     width: 800px;
   }
-
   .card {
     width: 45%;
   }
